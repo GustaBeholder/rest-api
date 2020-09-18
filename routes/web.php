@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/cliente/{id}',['as'=>'clientes.index', 'uses'=>'ClienteController@index']);
+
+Route::post('/adcionar', ['as'=>'clientes.adcionar', 'uses'=>'ClienteController@adcionar']);
+
+Route::put('/atualizar/{id}', ['as'=>'clientes.atualizar', 'uses'=>'ClienteController@atualizar']);
+
+Route::delete('/deletar/{id}', ['as'=>'clientes.deletar', 'uses'=>'ClienteController@deletar']);
